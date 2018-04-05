@@ -17,13 +17,14 @@ games <-data.frame(seahawks_scores, scores_allowed)
 games$diff <- seahawks_scores - scores_allowed
 
 # Create a new column "won" which is TRUE if the Seahawks won the game
-
+games$won <- games$diff > 0
 
 # Create a vector of the opponent names corresponding to the games played
-
+opponents <- c("Packers", "49ers", "Raiders", "Texans")
 
 # Assign your dataframe rownames of their opponents
-
+rownames(games) <- opponents
 
 # View your data frame to see how it has changed!
-
+View(games)
+games$opponents <- NULL
